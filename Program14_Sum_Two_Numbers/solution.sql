@@ -1,13 +1,13 @@
 USE CollegeDB;
-DROP PROCEDURE IF EXISTS DisplayNumbers;
-DELIMITER $$
-CREATE PROCEDURE DisplayNumbers()
+DROP PROCEDURE IF EXISTS CalculateSum;
+DELIMITER //
+CREATE PROCEDURE CalculateSum()
 BEGIN
-DECLARE i INT DEFAULT 1;
-WHILE i <= 10 DO
-SELECT i AS Number;
-SET i = i + 1;
-END WHILE;
-END $$
+DECLARE num1 INT DEFAULT 10;
+DECLARE num2 INT DEFAULT 20;
+DECLARE total INT;
+SET total = num1 + num2;
+SELECT total AS Sum;
+END //
 DELIMITER ;
-CALL DisplayNumbers();
+CALL CalculateSum();
