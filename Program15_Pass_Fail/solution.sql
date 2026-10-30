@@ -1,13 +1,11 @@
-USE CollegeDB;
-DROP PROCEDURE IF EXISTS CalculateSum;
 DELIMITER //
-CREATE PROCEDURE CalculateSum()
+CREATE PROCEDURE CheckResult(IN student_marks INT)
 BEGIN
-DECLARE num1 INT DEFAULT 10;
-DECLARE num2 INT DEFAULT 20;
-DECLARE total INT;
-SET total = num1 + num2;
-SELECT total AS Sum;
+IF student_marks >= 40 THEN
+SELECT 'PASS' AS Result;
+ELSE
+SELECT 'FAIL' AS Result;
+END IF;
 END //
 DELIMITER ;
-CALL CalculateSum();
+CALL CheckResult(65);
