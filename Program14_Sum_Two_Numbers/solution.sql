@@ -1,18 +1,13 @@
 USE CollegeDB;
-
-DROP PROCEDURE IF EXISTS CalculateSum;
-
+DROP PROCEDURE IF EXISTS DisplayNumbers;
 DELIMITER $$
-
-CREATE PROCEDURE CalculateSum()
+CREATE PROCEDURE DisplayNumbers()
 BEGIN
-    -- Declare two variables
-    -- Assign values
-    -- Calculate and display the sum
-
+DECLARE i INT DEFAULT 1;
+WHILE i <= 10 DO
+SELECT i AS Number;
+SET i = i + 1;
+END WHILE;
 END $$
-
 DELIMITER ;
-
--- Execute the procedure
-CALL CalculateSum();
+CALL DisplayNumbers();
